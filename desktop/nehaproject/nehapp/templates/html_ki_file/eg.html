@@ -1,0 +1,16 @@
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title></title>
+
+</head>
+<body>
+
+ welcome ,to second page<br>
+<br>
+<form action = "{% url 'nehapp:logout' %}" method = post>
+{% csrf_token %}
+<button type = "submit">Logout</button>
+</form>
+</body>
+</html>

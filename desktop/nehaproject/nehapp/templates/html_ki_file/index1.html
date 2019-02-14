@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'css_ki_file/style.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title></title>
+</head>
+<body>
+enter the elements of movie
+<form action = "{% url 'nehapp:action' %}" method = post>
+{% csrf_token %}
+Actor :<input type = "text" name = "text1" ></input><br><br>
+actor_movie :<input type = "text" name = "text2" ></input><br><br>
+genre :<input type = "text" name = "text3" ></input><br><br>
+movie_logo :<input type = "text" name = "text4"></input><br><br>
+<input type = "submit"></input><br><br>
+
+</form>
+<form action = "{% url 'nehapp:index' %}" method = post>
+{% csrf_token %}
+<button name = "click" value = "click">last item</button>
+</form>
+<form action = "{% url 'nehapp:show' %}" method = post>
+{% csrf_token %}
+<button name = "click" value = "click">show item</button>
+</form>
+
+<form action = "{% url 'nehapp:search' %}" method = post>
+{% csrf_token %}
+<button name = "click" value = "click">search</button>
+<input type = "text" name = "text5" placeholder = "search..."></input>
+</form>
+
+</body>
+</html>

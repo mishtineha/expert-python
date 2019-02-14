@@ -1,0 +1,19 @@
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title></title>
+
+</head>
+<body>
+<form action = "{% url 'nehapp:eg' %}" method = post>
+{% csrf_token %}
+
+email_id :<input type = "email" name = "email" id = "1" ></input><br><br>
+password :<input type = "password" name = "password" id = "2"></input><br><br>
+<button type = "submit">Login</button>
+</form>
+<i> new user?<a href = "{% url 'nehapp:signup' %}" >signup</a></i>
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title></title>
+</head>
+<body>
+<form action = "{% url 'nehapp:first_page' %}" method = post>
+{% csrf_token %}
+First_Name :<input type = "text" name = "text1" ></input><br><br>
+Last_Name :<input type = "text" name = "text2" ></input><br><br>
+email_id :<input type = "email" name = "text3" ></input><br><br>
+password :<input type = "password" name = "text4"></input><br><br>
+<input type = "submit"></input><br><br>
+
+</form>
+</body>
+</html>
