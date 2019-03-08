@@ -1,0 +1,54 @@
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title></title>
+</head>
+<body>
+<table border = "1",cellspacing="0",cellpadding="0">
+<tr>
+<td>id</td>
+<td>actor</td>
+<td>actor_movie</td>
+<td>genre</td>
+<td>movie_logo</td>
+</tr>
+{% for a in m1 %}
+<tr>
+<td>{{a.id}}</td>
+<td>{{a.actor}}</td>
+<td>{{a.actor_movie}}</td>
+<td>{{a.genre}}</td>
+<td>{{a.movie_logo}}</td>
+</tr>
+{% endfor %}
+{% for a in m2 %}
+<tr>
+<td>{{a.id}}</td>
+<td>{{a.actor}}</td>
+<td>{{a.actor_movie}}</td>
+<td>{{a.genre}}</td>
+<td>{{a.movie_logo}}</td>
+</tr>
+{% endfor %}
+
+{% for a in m3 %}
+<tr>
+<td>{{a.id}}</td>
+<td>{{a.actor}}</td>
+<td>{{a.actor_movie}}</td>
+<td>{{a.genre}}</td>
+<td>{{a.movie_logo}}</td>
+</tr>
+{% endfor %}
+{% for a in m4 %}
+<tr>
+<td>{{a.id}}</td>
+<td>{{a.actor}}</td>
+<td>{{a.actor_movie}}</td>
+<td>{{a.genre}}</td>
+<td>{{a.movie_logo}}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

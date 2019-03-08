@@ -1,0 +1,81 @@
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'style2.css' %}">
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'style.css' %}">
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title></title>
+<script>
+function func(){
+window.location = "{% url 'App:creditsto' %}"
+};
+function func2()
+{
+window.location = "{% url 'App:Cancel' %}"
+}
+</script>
+<style>
+tr{
+color:white;
+font-size:30px;
+}
+</style>
+</head>
+<body>
+<div class = "st"><i>Transfer Credits here:-
+</i></div>
+<div style = "margin-top:40px;font-size:30px;color:white;">
+<table>
+<td>Name:-</td>
+<td>{{u1.Name}}</td></tr>
+<tr>
+<td>E-mail:-</td>
+<td>{{u1.Email}}</td></tr>
+<tr>
+<td>Current-credits:-</td>
+<td>{{u1.credit}}</td></tr>
+<tr>
+<td>Contact-no:-</td>
+<td>{{u1.contact_no}}</td></tr>
+<tr>
+<td>City:-</td>
+<td>{{u1.city}}</td></tr>
+</table>
+{% if x != 0 %}
+<p style = "color:purple">Last Transaction:-</p>
+<table>
+
+
+<tr>
+<td>To:-</td>
+<td>{{x.to_user_name}}</td>
+</tr>
+<tr>
+<td>Transfered credit:-</td>
+<td>{{x.transfer_credit}}</td>
+</tr>
+
+</table>
+{% endif %}
+{% if y != 0 %}
+<p style = "color:purple">Last Transaction(credit gain:-):-</p>
+<table>
+
+
+<tr>
+<td>From:-</td>
+<td>{{y.from_user_name}}</td>
+</tr>
+<tr>
+<td>credit gain:-</td>
+<td>{{y.transfer_credit}}</td>
+</tr>
+
+</table>
+{% endif %}
+<button onclick = "func();" style = "float:right;">Transfer Credits to </button>
+
+<button onclick = "func2();" style = "float:left;">Cancel</button>
+</body>
+</html>

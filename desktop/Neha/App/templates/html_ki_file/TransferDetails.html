@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'style2.css' %}">
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'style.css' %}">
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title></title><style>
+tr {
+color:white;
+font-size : 30px;
+}
+</style>
+<script>
+function func(){
+window.location = "hello/home/"
+}
+</script>
+</head>
+<body>
+<div class = "st"><i>Transfer credits here:-</i></div>
+<table>
+<tr><th>From</th><th>To</th><th>Credit-Transfered</th><th>Transfered at:-</th>
+</tr>
+{% for i in t1 %}
+<tr>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;{{i.from_user_name}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;{{i.to_user_name}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;{{i.transfer_credit}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;{{i.created_at}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+{% endfor %}
+</table>
+<button onclick = "func();">Home-Page</button>
+</body>

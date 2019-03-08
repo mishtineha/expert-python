@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'style2.css' %}">
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'style.css' %}">
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title></title>
+<script>
+function validate()
+{
+if(document.myform.text1.value == "")
+{
+alert("enter credit points");
+document.myform.text1.focus();
+return false;
+}
+if(document.myform.text1.value < 0)
+{
+alert("enter positive credit points");
+document.myform.text1.focus();
+return false;
+}
+
+return true;
+}
+</script>
+</head>
+<body>
+<div class = "st"><i>Transfer credits here:-</i><div>
+<div style = "margin-top:140px;text-align;center">
+<form action = "{% url 'App:last' %}" method = "Post" name = "myform" onsubmit = "return(validate());">
+{% csrf_token %}
+<p style = "color:white;font-size:30px;">enter the credit points which you want to transfer:-<br></p>
+<input type = "text" name = "text1"></input><br>
+<br><input type = "submit" value = "Transfer"></input>
+</form>
+</body>

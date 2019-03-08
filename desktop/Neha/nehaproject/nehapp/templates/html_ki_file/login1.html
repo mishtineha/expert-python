@@ -1,0 +1,26 @@
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title>login</title>
+<div style ="background-color:black;">
+<h1 style ="color:red;"><font size = "10"><i>Matrimonial</h1>
+
+</div>
+
+</head>
+<body><br><br>
+<form action = "{% url 'nehapp:eg' %}" method = post>
+{% csrf_token %}
+<table align = "center">
+<tr><td><font size = "5">email_id :</td><td><input type = "email" name = "email" id = "1" ></input><td></tr>
+<tr><td><font size = "5">password :</td><td><input type = "password" name = "password" id = "2"></input></td></tr>
+</table>
+<p align = "center">
+<button type = "submit">Login</button><br><br>
+
+<font size = "5"><i> new user?<a href = "{% url 'nehapp:signup' %}" >signup</a></i>
+</p>
+</form>
+
+</body>
+</html>

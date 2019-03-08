@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'style2.css' %}">
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'style.css' %}">
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title></title>
+<script>
+function func()
+{
+window.location = "/hello/TransferDetails"
+}
+function func2()
+{
+window.location = "/hello/home"
+}
+</script>
+</head>
+<body>
+<div class = "st"><i>Transfere credits here:-</i></div>
+<p style = "color:white;text-align:center;margin:140px"><font size = "7">
+Transferred succesfully</p>
+
+
+<button onclick = "func();"style = "float:right;">TransferDetails</button>
+<button onclick = "func2();" style = "float:left;">Home-page</button>
+
+</body>

@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'style.css' %}">
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'style2.css' %}">
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title></title>
+
+<script>
+function view()
+{
+window.location = "{% url 'App:alluser' %}"
+
+}
+</script>
+
+</head>
+<body >
+<div class = "st"><i>Transfer Credits here :- </i></font></div>
+<center><div style = "color:white;margin-top:140px;text-align:center;"><font size = "10">to view all user press this
+<br><br><button style = "color:blue;" onclick = "view();"><font size = "7">View all users</button></div>
+</body>
+</html>

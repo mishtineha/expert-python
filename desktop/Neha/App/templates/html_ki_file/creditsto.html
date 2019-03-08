@@ -1,0 +1,64 @@
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'style2.css' %}">
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'style.css' %}">
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title></title>
+</head>
+<script type = 'text/javascript'>
+window.onload = function(){
+var table1 = document.getElementById("table1"),rIndex,
+rows = document.getElementsByTagName("tr");
+for(var i=1;i< rows.length;i++)
+{
+table1.rows[i].onclick = function()
+{
+rIndex = this.rowIndex;
+
+window.location = "/hello/showuser2/"+rIndex
+
+};
+function func()
+{
+window.location = "{% url 'App:Cancel' %}"
+}
+}}
+</script>
+<style>
+tr:hover td{
+background-color:grey;
+
+}
+tr{
+color:white;
+font-size:30px;
+}
+</style>
+</head>
+<body>
+<div class = "st"><i>Transfer Credits here :- </i></div>
+<div style = "margin-top:40px;font-size:30px;color:white;">Transfer credit to:-<br><br>
+<table id = "table1" border = "1" cellspacing = "0" cellpadding = "0">
+<tbody style = "cursor:pointer">
+<tr style = "color:white;" bgcolor = "pink">
+<th>Name</th>
+<th>E-mail</th>
+<th>Current-credit</th></tr>
+
+{% for i in u1 %}
+<tr >
+
+<td>&nbsp;&nbsp;&nbsp;&nbsp;{{i.Name}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;{{i.Email}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;{{i.credit}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+<br><br>
+<button onclick = "func();" style = "float:right;">Cancel</button><br><br>
+</body>
+</html>

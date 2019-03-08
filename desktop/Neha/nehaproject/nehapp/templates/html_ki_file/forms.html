@@ -1,0 +1,17 @@
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title></title>
+</head>
+<body>
+<form action = "{% url 'nehapp:favorite' %}" method = post>
+{% csrf_token %}
+<br>the songs belonging to this movie are there tell us which one is your favorite<br>
+{% for a in m1 %}
+<input type = "radio" id = "a{{forloop.counter}}" name = "fav" value = "{{a.id}}">
+<label for = "a{{forloop.counter}}">
+{{ a.song_name }}
+</label><br>
+{% endfor %}
+<input type = "submit" value = "favorite">
+</form>

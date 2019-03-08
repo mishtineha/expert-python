@@ -1,0 +1,14 @@
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title></title>
+</head>
+<body>
+<ul>
+{% for a in all_songs%}
+<li>  this song {{a.song_name}} belong to the movie :<a href = "{% url 'nehapp:showparms' a.movie.id %}">{{a.movie.id}}</a>
+</li>
+{% endfor %}
+<ul>
+</body>
+</html>

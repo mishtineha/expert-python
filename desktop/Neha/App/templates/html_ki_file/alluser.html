@@ -1,0 +1,61 @@
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'style2.css' %}">
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'style.css' %}">
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<title></title>
+<style>
+a:hover{
+
+color:green;
+}
+tr:hover td {
+background-color:grey;
+color:white;
+}
+tr{
+color:white;
+font-size:30px;
+}
+
+</style>
+<script type = 'text/javascript'>
+window.onload = function(){
+var table1 = document.getElementById("table1"),rIndex,
+rows = document.getElementsByTagName("tr");
+for(var i=1;i< rows.length;i++)
+{
+table1.rows[i].onclick = function()
+{
+rIndex = this.rowIndex;
+window.location = "/hello/"+rIndex
+
+};
+}} 
+</script>
+</head>
+<body>
+<div class = "st"><font size = "10"><i>Transfer Credits here :- </i></font></div>
+<div style = "margin-top:40px;color:white;font-size:30px;">Transfer credit from:-<br><br>
+<table id = "table1" border = "1" cellspacing = "0">
+<tbody style = "cursor:pointer">
+<tr  style = "color:black;" bgcolor = "pink">
+<th>Name</th>
+<th>E-mail</th>
+<th>Current-credit</th></tr>
+
+{% for i in u1 %}
+<tr class = "rowhighlight" >
+<td>&nbsp;&nbsp;&nbsp;&nbsp;{{i.Name}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;{{i.Email}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;{{i.credit}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+<p align = "left"><a href = "{% url 'App:hello' %}"><font size = "5">Go-back</a>
+</body>
+</html>
