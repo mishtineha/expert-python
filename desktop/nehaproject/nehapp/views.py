@@ -82,18 +82,21 @@ def signup(request):
     template = loader.get_template('html_ki_file/signup.html')
     return HttpResponse(template.render(context,request))
 def first_page(request):
-    request.session['2'] = 'second'
+    
     details = Details.objects.all()
     x = 0
     for a in details:
         if a.email_id == request.POST['text3']:
             x = x+1
     if x==0:
+        
         a = Details(First_Name = request.POST['text1'],Last_Name = request.POST['text2'],email_id = request.POST['text3'],password = request.POST['text4'])
+        request.session['2'] = a.First_Name
+        name = a.First_Name
         a.save()
         context = {'details':details}
         template = loader.get_template('html_ki_file/eg.html')
-        return HttpResponse("<h1> signup sucessfully "+a.First_Name+"</h1>"+template.render(context,request))
+        return HttpResponse("<h1> hey! "+name+"</h1>"+template.render(context,request))
     if x!=0:
         context = {'details':details}
         template = loader.get_template('html_ki_file/login1.html')

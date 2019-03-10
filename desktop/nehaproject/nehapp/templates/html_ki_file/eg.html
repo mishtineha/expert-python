@@ -1,16 +1,33 @@
 <html lang = "en">
 <head>
 <meta charset = "UTF-8">
-<title></title>
+<title>choose</title>
+<script>
+function myfunc(){
+if(radio1.selectedIndex == "1")
+{
+window.location = "http://127.0.0.1:8000/hello/login/"
+}
+}
+</script>
 
 </head>
 <body>
+<p><font size = "5">
+choose what do you want to see:-
 
- welcome ,to second page<br>
+<form>
+<input type = "radio" name = "radio1" id = "1"><font size = "5"> Clothing</input><br><br>
+<input type = "radio" name = "radio1"><font size = "5">  Shoes</input><br><br>
+<input type = "radio" name = "radio1"> <font size = "5"> Accessories</input><br><br>
+<input type = "radio" name = "radio1"> <font size = "5"> Bags</input><br><br>
+</form>
+</p>
 <br>
 <form action = "{% url 'nehapp:logout' %}" method = post>
 {% csrf_token %}
 <button type = "submit">Logout</button>
 </form>
+<button type = "button" onclick = "myfunc();">continue</button>
 </body>
 </html>
